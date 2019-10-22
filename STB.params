@@ -1,0 +1,65 @@
+# these are params and values for 
+#  STB, small tomato borer, Neoleucinodes elegantalis - in Degs Celsius (C)
+# Last updated in June 2019 for DDRP v2 (cohorts)  
+  fullname   <- "Small tomato borer"
+  pestof     <- "tomato, eggplant, peppers"
+  stgorder   <- c("OA","E","L","P","A","F") # "F" is end-of-day placeholder in DDRP v1; stgorder changed to 1, 2, 3, 4, 5 in DDRP v2
+  owstage    <- "OA"   # OA means ow as adults
+  eggLDT     <- 8.89
+  eggUDT     <- 30  # Climex: DV2 ca. 27 DV3 ca. 30-32 so use 30 as upper horiz cutoff
+  larvaeLDT  <- 8.89
+  larvaeUDT  <- 30 #upper dev. threshold-need to verify
+  pupaeLDT   <- 8.89
+  pupaeUDT   <- 30
+  adultLDT   <- 8.89 #for oviposition
+  adultUDT   <- 30
+  eggDD      <- 86  # 
+  larvaeDD   <- 283 #                
+  pupDD      <- 203 #           
+  adultDD    <- 101 # add adult PreOV=60 + ca. 41 DD to peak OV
+  OWadultDD  <- 86  # DD out of "OW stage" to first OV in spring = assume ca. same as adult PreOV = 60 DD
+  calctype   <- "triangle"
+  # Pest Event Maps (PEMs) must be turned on for these to get used:
+  PEMnumgens       <- 4  # create PEMS for up to this many generations (max is 4)  
+  eggEventDD       <- 80 # PEMs for egg hatch is ca 80/86 DDs into stage
+  eggEventLabel    <- "beginning of egg hatch" # Label for PEM egg stage
+  larvaeEventDD    <- 140 # PEMs for larvae stage is 78 DDs into stage
+  larvaeEventLabel <- "mid-larval development" # Label for PEM larvae stage
+  pupaeEventDD     <- 100 # PEMs for pupal stage is 58 DDs into stage
+  pupaeEventLabel  <- "mid-pupal development" # Label for PEM pupal stage
+  adultEventDD     <- 60 # PEMs for adult stage (1st oviposition) is 60 DDs into stage
+  adultEventLabel  <- "first egglaying" # Label for PEM adult stage
+  OWEventP         <- 1 # PEMs for OWadult is at end (100%) of stage
+  OWEventLabel     <- "1st adult emergence" # Label for PEM OWadult stage
+  # Old climate stress parameters
+  eggLLT       <- 3      # normally no eggs survive winter
+  eggLLDAYS    <- 2      # normally no eggs survive winter
+  eggULT       <- 38     # rough guess based on eggUDT
+  larvaeLLT    <- 3     # placeholder guess only - is research available?
+  larvaeLLDAYS <- 2      #  "" ""
+  larvaeULT    <- 38     #  "" ""
+  adultLLT     <- 3      # normally no adults survive winter
+  adultLLDAYS  <- 2      # normally no adults survive winter
+  chillstress_threshold <- -1   # CLIMEX model
+  chillstress_units_max1 <- 300  # use for chill stress units: ChillDD limit; so "most" all die once reached
+  chillstress_units_max2 <- 700  # use for chill stress units: ChillDD limit; so all die once reached
+  heatstress_threshold <- 32   # 1985B NEW all stages chill/heat stress units: threshold
+  heatstress_units_max1 <- 180  # use for heat stress units: HeatDD limit; so "most" all die once reached
+  heatstress_units_max2 <- 340  # use for heat stress units: HeatDD limit; so all die once reached
+# OW stage emergence parameters (DDRP v2 only)
+  distro_mean <- 50
+  distro_var <- 1500
+  xdist1 <- 0
+  xdist2 <- 111
+  distro_shape <- "normal" 
+#NAPPFAST FCM Doc notes: 10C very few eggs laid (Daiber 1980) pre-OV 27DD (12C). 
+#Peak OV within 3 days after emergence
+# 50% eggs laid 1st 1/3 of repro period. Survival reduced below 10C. 
+# Eggs/other stages killed below 1C
+# omnivourous - assume host plants avail everywhere/not limiting. 
+# From Daiber 1979abc,1980 Tlow=12C, Thi=40C
+# no OW stage but pupae selected as longest stage.
+#
+#LLT = lower lethal temperature (PRISM tmin), 
+#ULT = upper lethal temperature (PRISM tmax)
+
